@@ -7,12 +7,15 @@ import org.testng.annotations.Test;
 import payload.User;
 import utilities.DataProviders;
 
+import java.sql.SQLOutput;
+
 
 public class DDTests {
 
     @Test(priority = 0, dataProvider = "Data",dataProviderClass = DataProviders.class)
     public void testPostUser(String userID,String username, String fname, String lname, String useremail, String pwd, String ph)
     {
+        System.out.println("Test printing for github");
         User userPayload = new User();
         userPayload.setId(Integer.parseInt(userID));
         userPayload.setUsername(username);

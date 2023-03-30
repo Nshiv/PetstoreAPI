@@ -36,6 +36,7 @@ public class XLUtility {
         workbook=new XSSFWorkbook(fi);
         sheet=workbook.getSheet(sheetName);
         int rowcount=sheet.getLastRowNum();
+        System.out.println(rowcount);
         workbook.close();
         fi.close();
         return rowcount;
@@ -49,6 +50,7 @@ public class XLUtility {
         sheet=workbook.getSheet(sheetName);
         row=sheet.getRow(rownum);
         int cellcount=row.getLastCellNum();
+        System.out.println(cellcount);
         workbook.close();
         fi.close();
         return cellcount;
@@ -62,7 +64,6 @@ public class XLUtility {
         sheet=workbook.getSheet(sheetName);
         row=sheet.getRow(rownum);
         cell=row.getCell(colnum);
-
         DataFormatter formatter = new DataFormatter();
         String data;
         try{
